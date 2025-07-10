@@ -3,7 +3,12 @@
   "version": "1.0.0",
   "description": "MCP server that stores AI memories as Markdown files for visualization in Obsidian's graph view",
   "license": "MIT",
-  "author": "YuNaga224 (https://github.com/YuNaga224",
+  "author": "YuNaga224 (https://github.com/YuNaga224)",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/YuNaga224/obsidian-memory-mcp.git"
+  },
+  "keywords": ["mcp", "obsidian", "memory", "markdown", "knowledge-graph"],
   "type": "module",
   "bin": {
     "obsidian-memory-mcp": "/index.js"

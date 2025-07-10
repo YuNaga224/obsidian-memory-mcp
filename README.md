@@ -2,6 +2,18 @@
 
 MCP server that stores AI memories as Markdown files for visualization in Obsidian's graph view.
 
+## About
+
+This project is a modified version of [Anthropic's memory server](https://github.com/modelcontextprotocol/servers/tree/main/src/memory) that has been adapted for Obsidian integration. The original server stored memories in JSON format, while this version stores them as individual Markdown files with Obsidian-compatible `[[link]]` syntax for graph visualization.
+
+### Key Changes from Original
+
+- **Storage Format**: Changed from JSON to individual Markdown files
+- **Obsidian Integration**: Added `[[link]]` syntax for relations
+- **YAML Frontmatter**: Metadata stored in frontmatter instead of JSON
+- **File Structure**: Each entity becomes a separate `.md` file
+- **Removed Features**: Simplified to focus on Markdown-only storage
+
 ## Features
 
 - **Markdown Storage**: Individual `.md` files for each entity
@@ -85,3 +97,14 @@ npm run build
 ```bash
 npm run watch  # Watch for changes and rebuild
 ```
+
+## Credits
+
+This project is based on [Anthropic's memory server](https://github.com/modelcontextprotocol/servers/tree/main/src/memory) from the Model Context Protocol servers collection. We thank Anthropic for releasing the original implementation under the MIT license.
+
+## License
+
+MIT License - see [LICENSE](LICENSE) file for details.
+
+Original memory server: Copyright (c) 2024 Anthropic, PBC  
+Obsidian integration modifications: Copyright (c) 2024 YuNaga224
