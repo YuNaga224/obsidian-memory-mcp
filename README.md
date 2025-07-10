@@ -51,20 +51,58 @@ updated: 2024-01-10
 - [[Located in::Tokyo Office]]
 ```
 
-## Configuration
 
-Set environment variables to configure the memory directory:
+## Installation & Configuration
+
+### Option 1: Use with npx (Recommended)
+
+No installation required! Add to your Claude Desktop config (`claude_desktop_config.json`):
+
+```json
+{
+  "mcpServers": {
+    "obsidian-memory": {
+      "command": "npx",
+      "args": ["obsidian-memory-mcp"],
+      "env": {
+        "MEMORY_DIR": "/path/to/your/obsidian/vault"
+      }
+    }
+  }
+}
+```
+
+### Option 2: Local Installation
 
 ```bash
-# Custom memory directory (optional, defaults to ./memory)
-export MEMORY_DIR=/path/to/your/obsidian/vault
+git clone https://github.com/YuNaga224/obsidian-memory-mcp.git
+cd obsidian-memory-mcp
+npm install
+npm run build
+```
+
+Then configure in Claude Desktop:
+
+```json
+{
+  "mcpServers": {
+    "obsidian-memory": {
+      "command": "node",
+      "args": ["/full/path/to/obsidian-memory-mcp/dist/index.js"],
+      "env": {
+        "MEMORY_DIR": "/path/to/your/obsidian/vault"
+      }
+    }
+  }
+}
 ```
 
 ## Usage with Obsidian
 
-1. Set `MEMORY_DIR` to point to your Obsidian vault
-2. Use the MCP tools to create entities and relations
-3. Open Obsidian and view the graph
+1. Configure Claude Desktop with one of the options above
+2. Restart Claude Desktop
+3. Use the MCP memory tools to create entities and relations
+4. Open Obsidian and view the graph
 
 The knowledge graph will be visualized with:
 - Entity files as nodes
@@ -84,13 +122,6 @@ The server exposes the following tools:
 - `read_graph`: Get the entire knowledge graph
 - `search_nodes`: Search entities by query
 - `open_nodes`: Get specific entities by name
-
-## Installation
-
-```bash
-npm install
-npm run build
-```
 
 ## Development
 

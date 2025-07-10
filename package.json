@@ -11,10 +11,12 @@
   "keywords": ["mcp", "obsidian", "memory", "markdown", "knowledge-graph"],
   "type": "module",
   "bin": {
-    "obsidian-memory-mcp": "/index.js"
+    "obsidian-memory-mcp": "./dist/index.js"
   },
   "files": [
-    "index.js"
+    "dist",
+    "README.md",
+    "LICENSE"
   ],
   "scripts": {
     "build": "tsc && shx chmod +x dist/*.js",
