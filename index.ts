@@ -7,10 +7,10 @@ import {
   ListToolsRequestSchema,
 } from "@modelcontextprotocol/sdk/types.js";
 import { Entity, Relation } from './types.js';
-import { StorageFactory } from './storage/StorageFactory.js';
+import { MarkdownStorageManager } from './storage/MarkdownStorageManager.js';
 
-// Create storage manager based on environment configuration
-const storageManager = StorageFactory.create();
+// Create Markdown storage manager
+const storageManager = new MarkdownStorageManager();
 
 
 // The server instance and tools exposed to Claude
@@ -237,8 +237,7 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
 async function main() {
   const transport = new StdioServerTransport();
   await server.connect(transport);
-  const storageType = StorageFactory.getStorageType();
-  console.error(`Knowledge Graph MCP Server running on stdio (storage: ${storageType})`);
+  console.error("Knowledge Graph MCP Server running on stdio (storage: markdown)");
 }
 
 main().catch((error) => {

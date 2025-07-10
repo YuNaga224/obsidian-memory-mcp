@@ -13,7 +13,6 @@
     },
     "include": [
         "index.ts",
-        "migrate.ts", 
         "types.ts",
         "utils/**/*.ts",
         "storage/**/*.ts"

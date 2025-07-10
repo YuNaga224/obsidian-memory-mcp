@@ -1,7 +1,6 @@
 import { promises as fs } from 'fs';
 import path from 'path';
 import { Entity, Relation, KnowledgeGraph } from '../types.js';
-import { StorageManager } from './StorageInterface.js';
 import { 
   getMemoryDir, 
   getEntityPath, 
@@ -16,7 +15,7 @@ import {
   removeRelationFromContent
 } from '../utils/markdownUtils.js';
 
-export class MarkdownStorageManager implements StorageManager {
+export class MarkdownStorageManager {
   private memoryDir: string;
 
   constructor() {
