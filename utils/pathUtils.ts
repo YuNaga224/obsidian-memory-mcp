@@ -40,18 +40,15 @@ export function sanitizeFilename(name: string): string {
  * Get the memory directory path
  */
 export function getMemoryDir(): string {
-  const __dirname = path.dirname(fileURLToPath(import.meta.url));
-  const projectRoot = path.resolve(__dirname, '..');
-  const defaultMemoryDir = path.join(projectRoot, 'memory');
-  
   // Allow override via environment variable
   if (process.env.MEMORY_DIR) {
     return path.isAbsolute(process.env.MEMORY_DIR)
       ? process.env.MEMORY_DIR
-      : path.join(process.cwd(), process.env.MEMORY_DIR);
+      : path.resolve(process.cwd(), process.env.MEMORY_DIR);
   }
   
-  return defaultMemoryDir;
+  // Default to ./memory in the current working directory
+  return path.resolve(process.cwd(), 'memory');
 }
 
 /**
