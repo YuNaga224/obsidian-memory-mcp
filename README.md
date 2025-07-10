@@ -34,8 +34,8 @@ Example entity file (`John_Doe.md`):
 ```markdown
 ---
 entityType: person
-created: 2024-01-10
-updated: 2024-01-10
+created: 2025-07-10
+updated: 2025-07-10
 ---
 
 # John Doe
@@ -54,25 +54,6 @@ updated: 2024-01-10
 
 ## Installation & Configuration
 
-### Option 1: Use with npx (Recommended)
-
-No installation required! Add to your Claude Desktop config (`claude_desktop_config.json`):
-
-```json
-{
-  "mcpServers": {
-    "obsidian-memory": {
-      "command": "npx",
-      "args": ["obsidian-memory-mcp"],
-      "env": {
-        "MEMORY_DIR": "/path/to/your/obsidian/vault"
-      }
-    }
-  }
-}
-```
-
-### Option 2: Local Installation
 
 ```bash
 git clone https://github.com/YuNaga224/obsidian-memory-mcp.git
@@ -138,4 +119,4 @@ This project is based on [Anthropic's memory server](https://github.com/modelcon
 MIT License - see [LICENSE](LICENSE) file for details.
 
 Original memory server: Copyright (c) 2024 Anthropic, PBC  
-Obsidian integration modifications: Copyright (c) 2024 YuNaga224
+Obsidian integration modifications: Copyright (c) 2025 YuNaga224
