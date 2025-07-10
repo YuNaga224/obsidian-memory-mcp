@@ -13,13 +13,15 @@ export class JsonStorageManager implements StorageManager {
 
   constructor() {
     // Define memory file path using environment variable with fallback
-    const defaultMemoryPath = path.join(path.dirname(fileURLToPath(import.meta.url)), '..', 'memory.json');
+    const __dirname = path.dirname(fileURLToPath(import.meta.url));
+    const projectRoot = path.resolve(__dirname, '..');
+    const defaultMemoryPath = path.join(projectRoot, 'memory.json');
     
-    // If MEMORY_FILE_PATH is just a filename, put it in the same directory as the script
+    // If MEMORY_FILE_PATH is just a filename, put it in the project root
     this.memoryFilePath = process.env.MEMORY_FILE_PATH
       ? path.isAbsolute(process.env.MEMORY_FILE_PATH)
         ? process.env.MEMORY_FILE_PATH
-        : path.join(path.dirname(fileURLToPath(import.meta.url)), '..', process.env.MEMORY_FILE_PATH)
+        : path.join(projectRoot, process.env.MEMORY_FILE_PATH)
       : defaultMemoryPath;
   }
 

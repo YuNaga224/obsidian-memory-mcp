@@ -18,6 +18,9 @@ async function migrate() {
     const jsonManager = new JsonStorageManager();
     const markdownManager = new MarkdownStorageManager();
     
+    // Debug: Show JSON file path
+    console.log(`JSON file path: ${(jsonManager as any).memoryFilePath}`);
+    
     // Load data from JSON
     console.log('Loading data from JSON storage...');
     const graph = await jsonManager.readGraph();

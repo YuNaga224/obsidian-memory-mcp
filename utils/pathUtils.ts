@@ -41,7 +41,8 @@ export function sanitizeFilename(name: string): string {
  */
 export function getMemoryDir(): string {
   const __dirname = path.dirname(fileURLToPath(import.meta.url));
-  const defaultMemoryDir = path.join(path.dirname(__dirname), 'memory');
+  const projectRoot = path.resolve(__dirname, '..');
+  const defaultMemoryDir = path.join(projectRoot, 'memory');
   
   // Allow override via environment variable
   if (process.env.MEMORY_DIR) {
