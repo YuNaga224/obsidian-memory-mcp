@@ -2,6 +2,10 @@
 
 MCP server that stores AI memories as Markdown files for visualization in Obsidian's graph view.
 
+<a href="https://glama.ai/mcp/servers/@YuNaga224/obsidian-memory-mcp">
+  <img width="380" height="200" src="https://glama.ai/mcp/servers/@YuNaga224/obsidian-memory-mcp/badge" alt="Obsidian Memory MCP server" />
+</a>
+
 ## About
 
 This project is a modified version of [Anthropic's memory server](https://github.com/modelcontextprotocol/servers/tree/main/src/memory) that has been adapted for Obsidian integration. The original server stored memories in JSON format, while this version stores them as individual Markdown files with Obsidian-compatible `[[link]]` syntax for graph visualization.
